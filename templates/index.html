@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title></title>
+      <style>
+         @font-face{font-family:jazeera_bold;src:url(https://www.jazeeraairways.com/assets/fonts/j9_bold-webfont.woff2) format("woff2"),
+url(https://www.jazeeraairways.com/assets/fonts/j9_bold-webfont.woff) format("woff");
+font-weight:400;
+font-style:normal
+}
+@font-face{font-family:jazeera_light;src:url(https://www.jazeeraairways.com/assets/fonts/j9_light_-webfont.woff2) format("woff2"),
+url(https://www.jazeeraairways.com/assets/fonts/j9_light_-webfont.woff) format("woff");
+font-weight:400;
+font-style:normal
+}
+@font-face{font-family:jazeera_medium;src:url(https://www.jazeeraairways.com/assets/fonts/j9_medium-webfont.woff2) format("woff2"),
+url(https://www.jazeeraairways.com/assets/fonts/j9_medium-webfont.woff) format("woff");
+font-weight:400;
+font-style:normal
+}
+@font-face{font-family:jazeera_regular;src:url(https://www.jazeeraairways.com/assets/fonts/j9_regular-webfont.woff2) format("woff2"),
+url(https://www.jazeeraairways.com/assets/fonts/j9_regular-webfont.woff) format("woff");
+font-weight:400;
+font-style:normal
+}
+
+* {
+   font-family:jazeera_regular;
+}
+
+h3, h4 {
+   font-family:jazeera_bold!important;
+}
+
+p {
+   font-family:jazeera_light;
+}
+
+a {
+   font-family: jazeera_regular!important;
+   text-decoration: none;
+}
+         body{
+            padding: 25px;
+            overflow-x: hidden;
+         }
+         .center {
+           margin: auto;
+           width: 50%;
+           padding: 10px;
+         }
+         .demo-card-wide.mdl-card {
+           width: 75%;
+         }
+      </style>
+   </head>
+   <body style="margin-left: 35px;">
+<div class="demo-card-wide mdl-card mdl-shadow--2dp center">
+  <div class="mdl-card__supporting-text">
+   <p style="font-size:30px;color:black;text-align: center;font-family:jazeera_bold!important;">Generate QR Code</p>
+   <hr/><br/>
+          <p style="font-size:28px;color:black;font-family:jazeera_regular!important;">Category</p>
+      <br/>
+      <div style="font-size: 18px;color:black;margin-left: 15px;">
+        <form id="my_form">
+         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Classroom">
+           <input type="radio" id="Classroom" class="mdl-radio__button" value="classroom" name="options">
+           <span class="mdl-radio__label">Classroom</span>
+         </label><br><br>
+         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="department">
+           <input type="radio" id="department" class="mdl-radio__button" value="department" name="options">
+           <span class="mdl-radio__label">Department</span>
+         </label><br><br>
+         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="restroom">
+           <input type="radio" id="restroom" class="mdl-radio__button" value="restroom" name="options">
+           <span class="mdl-radio__label">Restroom</span>
+         </label><br><br>
+         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="water">
+           <input type="radio" id="water" class="mdl-radio__button" value="water" name="options">
+           <span class="mdl-radio__label">Water</span>
+         </label><br><br>
+         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lift">
+           <input type="radio" id="lift" class="mdl-radio__button" value="lift" name="options">
+           <span class="mdl-radio__label">Lift</span>
+         </label><br><br>
+         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="miscellaneous">
+           <input type="radio" id="miscellaneous" class="mdl-radio__button" value="misc" name="options">
+           <span class="mdl-radio__label">Miscellaneous</span>
+         </label><br><br>
+      </div>
+      <br><br>
+      <p style="font-size:28px;color:black;font-family:jazeera_regular!important;">Data</p>
+      <br><br>
+      <div style="font-size:18px;color:black;">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+             <input class="mdl-textfield__input" type="text" id="block" name="block" maxlength="1" pattern="^[A-Z]+$">
+             <label class="mdl-textfield__label" for="block">Block</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+             <input class="mdl-textfield__input" type="text" id="floor" name="floor" maxlength="1" pattern="[0-9.]+">
+             <label class="mdl-textfield__label" for="floor">Floor</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="room-conditional">
+             <input class="mdl-textfield__input" type="text" id="room" name="room">
+             <label class="mdl-textfield__label" for="room">Room</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="dept-conditional">
+             <input class="mdl-textfield__input" type="text" id="department" name="department">
+             <label class="mdl-textfield__label" for="department">Department</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"  id="disp-conditional">
+             <input class="mdl-textfield__input" type="text" id="dispenser" name="dispenser">
+             <label class="mdl-textfield__label" for="dispenser">Dispenser Number</label>
+            </div>
+         </form>
+      </div>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a onclick="document.getElementById('my_form').submit();" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Generate
+    </a>  </div>
+</div>
+      <br/>
+
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+              integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+              crossorigin="anonymous"></script>
+            <script>
+               $(document).ready(function () {
+
+                   $('#dept-conditional').hide();
+                   $('#disp-conditional').hide();
+                   $('#room-conditional').hide();
+
+                   $('input:radio[name=options]').change(function () {
+                     if ($("input[name='options']:checked").val() == "department") {
+                         $('#dept-conditional').show();
+                      }else{
+                        $('#dept-conditional').hide();
+                     }
+
+                     if ($("input[name='options']:checked").val() == "water") {
+                         $('#disp-conditional').show();
+                      }else{
+                        $('#disp-conditional').hide();
+                     }
+
+                     if ($("input[name='options']:checked").val() == "classroom") {
+                         $('#room-conditional').show();
+                      }else{
+                        $('#room-conditional').hide();
+                     }
+                   });
+
+               });
+            </script>
+
+   </body>
+</html>
