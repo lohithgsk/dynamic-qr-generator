@@ -24,9 +24,7 @@ app = Flask(__name__)
 #==============ROUTES======================================================
 #/- routes are defined by @app.route decorator
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_file("thumb.png")
+
 
 @app.route('/')
 def index():
