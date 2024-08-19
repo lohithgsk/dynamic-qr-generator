@@ -87,7 +87,7 @@ def makeresult(prefill_type, data, BASE_URL="gms.psgtech.ac.in"):
                     "block" : data["block"],
                     "floor" : data["floor"]
                   }
-        title = f"{block} Block Lift"
+        title = f"{data['block']} Block Lift"
     elif prefill_type=="misc":
         prefill = {
                     "block" : data["block"],
